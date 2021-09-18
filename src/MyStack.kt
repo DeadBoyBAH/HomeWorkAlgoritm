@@ -14,24 +14,15 @@ class MyStack(
         array[++pop] = symbol
     }
 
-    fun pop(): Char {
-        val result = array[pop]
-        array[pop] = ' '
-        pop--
-        return result
+    fun pop() = array[pop].also {
+        array[pop--] = ' '
     }
 
-    fun isEmpty(): Boolean {
-        return pop == -1
-    }
+    fun isEmpty() = pop == -1
 
-    fun top(): Char {
-        return array[pop]
-    }
+    fun top() = array[pop]
 
-    fun length(): Int {
-        return pop + 1
-    }
+    fun length() = pop + 1
 
     fun sort(): MyStack {
         val oldStack = this
