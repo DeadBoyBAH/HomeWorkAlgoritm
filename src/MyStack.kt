@@ -51,7 +51,7 @@ class MyStack(
                         break
                     } else if (newStack.isEmpty()) {
                         newStack.push(oldEl)
-                        if (iterator != 1) newStack.push(newEl)
+                        newStack.push(newEl)
                         while (iterator != 0) {
                             newStack.push(oldStack.pop())
                             iterator--
@@ -64,6 +64,7 @@ class MyStack(
                 }
             }
         }
+
         return newStack
     }
 }
