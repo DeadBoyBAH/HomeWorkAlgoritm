@@ -8,7 +8,7 @@ class MyQueue2(
     fun insert(word: String?) {
         if (array.size - 1 == pop) {
             val arrayHelper = array
-            array = arrayOfNulls<String>((pop * 1.5).toInt())
+            array = arrayOfNulls((pop * 1.5).toInt())
             for (i in arrayHelper.indices) {
                 array[i] = arrayHelper[i]
             }
@@ -16,12 +16,23 @@ class MyQueue2(
         array[++pop] = word
     }
 
+    fun push(word: String?) {
+        if (array.size - 1 == pop) {
+            val arrayHelper = array
+            array = arrayOfNulls((pop * 1.5).toInt())
+            array[0] = word
+            for (i in arrayHelper.indices) {
+                array[i + 1] = arrayHelper[i]
+            }
+        }
+    }
+
     fun removeFirst() {
         val firstEl = array[0]
         val arrayHelper = array
-        array = arrayOfNulls<String>(pop-1)
+        array = arrayOfNulls(pop - 1)
         for (i in 1 until arrayHelper.size) {
-            array[i-1] = arrayHelper[i]
+            array[i - 1] = arrayHelper[i]
         }
     }
 
@@ -50,6 +61,4 @@ class MyQueue2(
         }
         return string
     }
-
-
 }

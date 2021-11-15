@@ -1,3 +1,5 @@
+package LaboratoryWork1
+
 class UnionStack {
 
     companion object {

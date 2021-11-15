@@ -20,7 +20,7 @@ fun main() {
     println("Фамилии из первого файла: ${queue1.print()}") // вывод элементов из первой очереди
     println("Фамилии из второго файла: ${queue2.print()}") // вывод элементов из второй очереди
 
-    val unionQueue = unionQueues(queue1, queue2) // создание объединенной очереди
+    val unionQueue = unionDeques(queue1, queue2) // создание объединенной очереди
     println("Объединенные фамилии: ${unionQueue.print()}") // вывод объединенной очереди
 
     File("laboratory3_result.txt").printWriter().use { out -> // запись фамилий в файл
@@ -30,7 +30,7 @@ fun main() {
     }
 }
 
-fun unionQueues(queue1: MyQueue2, queue2: MyQueue2): MyQueue2 { // метод для объединения очередей
+fun unionDeques(queue1: MyQueue2, queue2: MyQueue2): MyQueue2 { // метод для объединения очередей
     val unionQueue = MyQueue2() // создаём объединённую очередь
     val length: Int = if (queue1.size() < queue2.size()) { // ищём минимальную очередь для итераций
         queue1.size()

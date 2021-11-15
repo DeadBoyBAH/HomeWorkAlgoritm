@@ -1,3 +1,5 @@
+package LaboratoryWork1
+
 fun main() {
     val stack1 = MyStack()
     val stack2 = MyStack()

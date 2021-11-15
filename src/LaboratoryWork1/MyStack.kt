@@ -1,3 +1,5 @@
+package LaboratoryWork1
+
 class MyStack(
     var pop: Int = -1,
     private var array: CharArray = CharArray(10)
