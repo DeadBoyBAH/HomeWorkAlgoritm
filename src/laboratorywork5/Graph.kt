@@ -18,7 +18,11 @@ class Graph(
         for (i in 0 until 10) {
             if (mas[i][v] == 1) {
                 list.add(vertexList[i]?.name)
-                list.addAll(getVertexToThis(i, list))
+                if (!vertexList[i]!!.isVisited) {
+                    list.addAll(getVertexToThis(i, list))
+                }
+
+                vertexList[i]?.isVisited = true
             }
         }
 
